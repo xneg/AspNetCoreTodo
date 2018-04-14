@@ -1,0 +1,23 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AspNetCoreTodo.Data;
+using AspNetCoreTodo.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace AspNetCoreTodo.Services
+{
+    public class TodoItemsService : ITodoItemService
+    {
+        private readonly ApplicationDbContext _context;
+
+        public TodoItemsService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync()
+        {
+            return await _context.Items.Where(i => !i.IsDone).ToArrayAsync();
+        }
+    }
+}
