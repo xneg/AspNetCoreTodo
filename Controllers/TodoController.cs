@@ -44,5 +44,18 @@ namespace AspNetCoreTodo.Controllers
 
             return Ok();
         }
+
+        public async Task<IActionResult> MarkDone(Guid id)
+        {
+            if (id == Guid.Empty)
+                return BadRequest();
+
+            var succesfull = await _todoItemService.MarkDoneAsync(id);
+
+            if (!succesfull) 
+                return BadRequest();
+
+            return Ok();
+        }
     }
 }

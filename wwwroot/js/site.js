@@ -1,5 +1,8 @@
 ﻿$(document).ready(function() {
     $('#add-item-button').on('click', addItem);
+    $('.done-checkbox').on('click', function(e) {
+        markCompleted(e.target);
+    });
 })
 
 function addItem() {
@@ -24,5 +27,14 @@ function addItem() {
                responseText
                statusText */
         }
+    })
+}
+
+function markCompleted(checkbox) {
+    checkbox.disabled = true;
+
+    $.post('/Todo/MarkDone', {id: checkbox.name}, function() {
+        var row = checkbox.parentElement.parentElement;
+        $(row).addClass('done');
     })
 }
