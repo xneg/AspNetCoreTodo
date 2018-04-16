@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Models;
 using AspNetCoreTodo.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreTodo
 {
@@ -36,7 +37,19 @@ namespace AspNetCoreTodo
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddMvc();
+            services
+                .AddAuthentication()
+                .AddFacebook(options => 
+                {
+                    options.AppId = Configuration["Facebook:AppId"];
+                    options.AppSecret = Configuration["Facebook:AppSecret"];
+                });
+
+            services.AddMvc(options =>
+            {
+                // options.SslPort = 5001;
+                options.Filters.Add(new RequireHttpsAttribute ());
+            });
 
             // services.AddSingleton<ITodoItemService, FakeTodoItemService>();
             services.AddScoped<ITodoItemService, TodoItemsService>();

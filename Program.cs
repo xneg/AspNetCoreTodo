@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +21,16 @@ namespace AspNetCoreTodo
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseKestrel(options =>
+                {
+                    // options.Listen(IPAddress.Loopback, 5000);
+                    options.Listen(IPAddress.Loopback, 5000, listenOptions =>
+                    {
+                        listenOptions.UseHttps("localhost.pfx", "localhostPassword");
+                    });
+                })
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("https://localhost:5000")
                 .Build();
     }
 }
