@@ -12,6 +12,11 @@ namespace AspNetCoreTodo.Services
             throw new NotImplementedException();
         }
 
+        public Task<bool> AddItemAsync(NewTodoItem newItem, ApplicationUser currentUser)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync()
         {
             IEnumerable<TodoItem> items = new[]
@@ -32,6 +37,16 @@ namespace AspNetCoreTodo.Services
         }
 
         public Task<bool> MarkDoneAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> MarkDoneAsync(Guid id, ApplicationUser currentUser)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<TodoItem>> ITodoItemService.GetIncompleteItemsAsync(ApplicationUser currentUser)
         {
             throw new NotImplementedException();
         }
