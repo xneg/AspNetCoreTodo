@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTodo", "AspNetCoreTodo\AspNetCoreTodo.csproj", "{335B27CC-3849-4939-BDED-1380A7910955}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTodo.UnitTests", "AspNetCoreTodo.UnitTests\AspNetCoreTodo.UnitTests.csproj", "{8AF48C29-EDED-481C-940F-39BF42C1E988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{335B27CC-3849-4939-BDED-1380A7910955}.Release|x64.Build.0 = Release|x64
 		{335B27CC-3849-4939-BDED-1380A7910955}.Release|x86.ActiveCfg = Release|x86
 		{335B27CC-3849-4939-BDED-1380A7910955}.Release|x86.Build.0 = Release|x86
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|x64.ActiveCfg = Debug|x64
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|x64.Build.0 = Debug|x64
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|x86.ActiveCfg = Debug|x86
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Debug|x86.Build.0 = Debug|x86
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|x64.ActiveCfg = Release|x64
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|x64.Build.0 = Release|x64
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|x86.ActiveCfg = Release|x86
+		{8AF48C29-EDED-481C-940F-39BF42C1E988}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
